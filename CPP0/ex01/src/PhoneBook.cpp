@@ -19,18 +19,18 @@ std::string trunc_string(std::string str) {
 
 void	show_contact(Contact contact, std::string index) {
 	std::cout << "|" << trunc_string(index) << "|";
-	std::cout << trunc_string(contact.first_name) << "|";
-	std::cout << trunc_string(contact.last_name) << "|";
-	std::cout << trunc_string(contact.nickname) << "|" << std::endl;
+	std::cout << trunc_string(contact.get_first_name()) << "|";
+	std::cout << trunc_string(contact.get_last_name()) << "|";
+	std::cout << trunc_string(contact.get_nickname()) << "|" << std::endl;
 }
 
 void	show_specific(Contact contact)
 {
-	std::cout << "First name: " << contact.first_name << std::endl;
-	std::cout << "Last name: " << contact.last_name << std::endl;
-	std::cout << "Nickname: " << contact.nickname << std::endl;
-	std::cout << "Phone number: " << contact.phone_number << std::endl;
-	std::cout << "Darkest secret: " << contact.darkest_secret << std::endl;
+	std::cout << "First name: " << contact.get_first_name() << std::endl;
+	std::cout << "Last name: " << contact.get_last_name() << std::endl;
+	std::cout << "Nickname: " << contact.get_nickname() << std::endl;
+	std::cout << "Phone number: " << contact.get_phone_number() << std::endl;
+	std::cout << "Darkest secret: " << contact.get_darkest_secret() << std::endl;
 }
 
 void	replace_old_contact(Contact contacts[8], Contact new_contact) {
@@ -55,19 +55,19 @@ void	PhoneBook::add(void) {
 
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, input);
-	new_contact.first_name = input;
+	new_contact.set_first_name(input);
 	std::cout << "Enter last name: ";
 	std::getline(std::cin, input);
-	new_contact.last_name = input;
+	new_contact.set_last_name(input);
 	std::cout << "Enter nickname: ";
 	std::getline(std::cin, input);
-	new_contact.nickname = input;
+	new_contact.set_nickname(input);
 	std::cout << "Enter phone number: ";
 	std::getline(std::cin, input);
-	new_contact.phone_number = input;
+	new_contact.set_phone_number(input);
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, input);
-	new_contact.darkest_secret = input;
+	new_contact.set_darkest_secret(input);
 	if (this->contact_count < 8) {
 		this->contacts[this->contact_count] = new_contact;
 		this->contact_count++;
