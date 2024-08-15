@@ -1,17 +1,15 @@
 BIN = bin
-NAME = phonebook
+NAME = account
 CC = g++
 CFLAG = -Wall -Werror -Wextra -std=c++98
-SRC = Account.cpp tests.cpp
+SRC = Account.cpp tests.cpp 
 OBJ = $(SRC:%cpp=$(BIN)/%o)
-INCS = Account.hpp
-IFLAGS = -I $(INCS)
 RM = rm -rf
 
 all: $(NAME)
 
-$(BIN)/%.o: src/%.cpp
-	$(CC) -c $< $(CFLAG) $(IFLAGS) -o $@
+$(BIN)/%.o: %.cpp
+	$(CC) -c $< $(CFLAG) -o $@
 
 $(NAME): $(BIN) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)

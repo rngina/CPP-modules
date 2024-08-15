@@ -38,6 +38,8 @@ public:
 	void	displayStatus( void ) const;
 
 
+
+
 private:
 
 	static int	_nbAccounts;
