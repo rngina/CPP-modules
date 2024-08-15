@@ -3,13 +3,15 @@
 #include "../includes/Contact.hpp"
 #include "../includes/PhoneBook.hpp"
 
+std::string	check_input(void);
+
 int	main(void) {
 	std::string	input;
 	PhoneBook	phonebook;
 
 	while (1) {
 		std::cout << "Enter a command: ";
-		std::getline(std::cin, input);
+		input = check_input();
 		if (input == "ADD") {
 			phonebook.add();
 		}

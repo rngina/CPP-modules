@@ -1,4 +1,5 @@
 #include <string>
+#include <cstdlib>
 #include <sstream>
 #include <iostream>
 #include "../includes/PhoneBook.hpp"
@@ -11,7 +12,7 @@ std::string trunc_string(std::string str) {
 	}
 	if (str.length() < 10) {
 		while (str.length() < 10) {
-			str = str + " ";
+			str = " " + str;
 		}
 	}
 	return (str);
@@ -40,6 +41,38 @@ void	replace_old_contact(Contact contacts[8], Contact new_contact) {
 	contacts[7] = new_contact;
 }
 
+bool	is_valid(std::string& str) {
+	bool	valid = false;
+
+	if (str.empty()) {
+		return false;
+	}
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+		if (*it != ' ' && *it != '\t' && *it != '\n' && *it != '\v' && *it != '\f' && *it != '\r') {
+			valid = true;
+			break;
+		}
+	}
+	return valid;
+}
+
+std::string	check_input(void)
+{
+	while (1)
+	{
+		std::string	input;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			std::exit(0);
+		if (!is_valid(input)) {
+			std::cout << "Invalid input, enter again: " << std::endl;
+			continue;
+		}
+		else
+			return input;
+	}
+}
+
 PhoneBook::PhoneBook(void) {
 	this->contact_count = 0;
 	return;
@@ -54,19 +87,19 @@ void	PhoneBook::add(void) {
 	std::string	input;
 
 	std::cout << "Enter first name: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	new_contact.set_first_name(input);
 	std::cout << "Enter last name: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	new_contact.set_last_name(input);
 	std::cout << "Enter nickname: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	new_contact.set_nickname(input);
 	std::cout << "Enter phone number: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	new_contact.set_phone_number(input);
 	std::cout << "Enter darkest secret: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	new_contact.set_darkest_secret(input);
 	if (this->contact_count < 8) {
 		this->contacts[this->contact_count] = new_contact;
@@ -88,7 +121,7 @@ void	PhoneBook::search(void){
 
 	std::string	input;
 	std::cout << "Enter index of the contact you want to see: ";
-	std::getline(std::cin, input);
+	input = check_input();
 	std::stringstream ss(input);
     ss >> number;
 	if (input.length() == 1 && input[0] >= '0' && input[0] <= '7') {
