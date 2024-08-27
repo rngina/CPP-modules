@@ -16,13 +16,4 @@ public:
 	void attack();
 };
 
-HumanB::HumanB(std::string name) : name(name)
-{
-}
-
-HumanB::~HumanB()
-{
-}
-
-
 #endif
