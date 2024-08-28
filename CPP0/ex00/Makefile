@@ -1,6 +1,6 @@
 BIN = bin
 NAME = megaphone
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = src/megaphone.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)

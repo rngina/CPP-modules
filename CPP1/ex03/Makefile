@@ -1,6 +1,6 @@
 BIN = bin
 NAME = weapon
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = src/main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)

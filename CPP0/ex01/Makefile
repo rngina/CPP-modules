@@ -1,6 +1,6 @@
 BIN = bin
 NAME = phonebook
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = src/Contact.cpp src/main.cpp src/PhoneBook.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)

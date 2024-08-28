@@ -1,6 +1,6 @@
 BIN = bin
 NAME = zombie
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp zombieHorde.cpp
 OBJ = $(SRC:%cpp=$(BIN)/%o)

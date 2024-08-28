@@ -1,6 +1,6 @@
 BIN = bin
 NAME = brain
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp 
 OBJ = $(SRC:%cpp=$(BIN)/%o)

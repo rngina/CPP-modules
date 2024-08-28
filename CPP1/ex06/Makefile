@@ -1,6 +1,6 @@
 BIN = bin
 NAME = harlFilter
-CC = g++
+CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
 SRC = src/main.cpp src/Harl.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)

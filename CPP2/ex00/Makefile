@@ -1,8 +1,8 @@
 BIN = bin
-NAME = harl
+NAME = fixed
 CC = c++
 CFLAG = -Wall -Werror -Wextra -std=c++98
-SRC = src/main.cpp src/Harl.cpp
+SRC = src/main.cpp src/Fixed.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)
 INCS = ./includes
 IFLAGS = -I $(INCS)
