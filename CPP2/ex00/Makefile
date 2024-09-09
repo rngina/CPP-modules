@@ -1,29 +1,27 @@
-BIN = bin
+OBJ = obj
 NAME = fixed
 CC = c++
-CFLAG = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = src/main.cpp src/Fixed.cpp
-OBJ = $(SRC:src/%cpp=$(BIN)/%o)
+OBJECT_FILES = $(SRC:src/%cpp=$(OBJ)/%o)
 INCS = ./includes
-IFLAGS = -I $(INCS)
-RM = rm -rf
 
 all: $(NAME)
 
-$(BIN)/%.o: src/%.cpp
-	$(CC) -c $< $(CFLAG) $(IFLAGS) -o $@
+$(OBJ)/%.o: src/%.cpp
+	$(CC) -c $< $(FLAGS) -I $(INCS) -o $@
 
-$(NAME): $(BIN) $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(OBJECT_FILES)
+	$(CC) $(OBJECT_FILES) -o $(NAME)
 
-$(BIN):
-	mkdir -p $(BIN)
+$(OBJ):
+	mkdir -p $(OBJ)
 
 clean:
-	$(RM) $(BIN)
+	rm -rf $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
