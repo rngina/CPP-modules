@@ -1,8 +1,8 @@
 OBJ = obj
-NAME = fixed
+NAME = scavtrap
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = src/main.cpp src/Fixed.cpp
+SRC = src/main.cpp src/ClapTrap.cpp src/ScavTrap.cpp
 OBJECT_FILES = $(SRC:src/%cpp=$(OBJ)/%o)
 INCS = ./includes
 
