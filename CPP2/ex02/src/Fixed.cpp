@@ -6,14 +6,10 @@
 Fixed::Fixed() : value(0) {}
 
 //int constructor
-Fixed::Fixed(const int value) {
-	this->value = value << bits;
-}
+Fixed::Fixed(const int value) : value(value << bits) {}
 
 //float constructor
-Fixed::Fixed(const float value) {
-	this->value = roundf(value * (1 << bits));
-}
+Fixed::Fixed(const float value) : value(roundf(value * (1 << bits))){}
 
 //copy constructor
 Fixed::Fixed(const Fixed &copy) {
@@ -124,12 +120,12 @@ bool Fixed::operator!=(const Fixed &num) const {
 	return value != num.getRawBits();
 }
 
-//static functions to compare two Fixed instances
-Fixed Fixed::max(const Fixed &a, const Fixed &b) {
+// static functions to compare two Fixed instances
+Fixed const &Fixed::max(const Fixed &a, const Fixed &b) {
 	return a > b ? a : b;
 }
 
-Fixed Fixed::min(const Fixed &a, const Fixed &b) {
+Fixed const &Fixed::min(const Fixed &a, const Fixed &b) {
 	return a < b ? a : b;
 }
 
