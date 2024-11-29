@@ -1,10 +1,11 @@
 #include <iostream>
-#include "../includes/Colours.hpp"
 #include "../includes/ClapTrap.hpp"
 
 int main()
 {
-    std::cout << BOLD_GREEN << "CONSTRUCTOR" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_GREEN << "CONSTRUCTORS" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
 
     ClapTrap    foo("Foo");
     ClapTrap    bar("Bar");
@@ -12,36 +13,21 @@ int main()
     ClapTrap    qux;      
     qux = bar;            // qux will have name "Bar"
 
-    std::cout << BOLD_WHITE << "MAIN" << RESET << std::endl;
-
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-   foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-    foo.attack("Bar");
-    bar.takeDamage(1);
-
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_YELLOW << "MAIN" << RESET << std::endl;
     std::cout << "-----------------------------------"  << std::endl;
 
+    foo.attack("Bar");
+    bar.takeDamage(3);
+    bar.takeDamage(3);
+    bar.takeDamage(3);
+    bar.takeDamage(3);
+    bar.takeDamage(1);
     buz.attack("Bar");
     qux.takeDamage(50);
     qux.attack("Foo");
 
-    std::cout << BOLD_RED << "DESTRUCTOR" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_RED << "DESTRUCTORS" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
 }

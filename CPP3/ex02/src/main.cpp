@@ -1,10 +1,11 @@
 #include <iostream>
-#include "../includes/Colours.hpp"
 #include "../includes/FragTrap.hpp"
 
 int main()
 {
-    std::cout << BOLD_GREEN << "CONSTRUCTOR" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_GREEN << "CONSTRUCTORS" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
 
     FragTrap foo("Foo");
     FragTrap bar("Bar");
@@ -12,39 +13,24 @@ int main()
     FragTrap qux;
     qux = bar; // qux will have name "Bar"
 
-    std::cout << BOLD_WHITE << "MAIN" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_YELLOW << "MAIN" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
 
     foo.attack("Bar");
-    bar.takeDamage(20);
+    bar.takeDamage(30);
     foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-    foo.attack("Bar");
-    bar.takeDamage(20);
-
-    std::cout << "-----------------------------------" << std::endl;
-
+    bar.takeDamage(30);
+    bar.takeDamage(30);
+    bar.takeDamage(30);
+    bar.takeDamage(30);
     buz.attack("Bar");
-    qux.takeDamage(20);
+    qux.takeDamage(200);
     qux.attack("Foo");
-    qux.beRepaired(20);
 
     qux.highFivesGuys();
 
-    std::cout << BOLD_RED << "DESTRUCTOR" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
+    std::cout << BOLD_RED << "DESTRUCTORS" << RESET << std::endl;
+    std::cout << "-----------------------------------"  << std::endl;
 }
