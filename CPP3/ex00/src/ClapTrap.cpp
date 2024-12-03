@@ -40,11 +40,11 @@ void	ClapTrap::attack(std::string const & target)
 	{
 		if (this->_hitPoints > 0)
 		{
+			this->_energyPoints--;
 			std::cout << BOLD_WHITE <<"[ClapTrap] " << RESET << this->_name 
 			<< " attacks " << target << ", causing " << this->_attackDamage 
 			<< " points of damage! " << "ENERGY:" << this->_energyPoints 
 			<< " HEALTH:" << this->_hitPoints <<std::endl;
-			this->_energyPoints--;
 			return ;
 		}
 		std::cout << BOLD_WHITE <<"[ClapTrap] " << RESET << this->_name << " has no health points to attack " << target <<std::endl;

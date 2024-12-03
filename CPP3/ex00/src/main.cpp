@@ -18,6 +18,17 @@ int main()
     std::cout << "-----------------------------------"  << std::endl;
 
     foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
+    foo.attack("Bar");
     bar.takeDamage(3);
     bar.takeDamage(3);
     bar.takeDamage(3);
