@@ -1,27 +1,23 @@
-OBJ = obj
 NAME = animal
+SRC = src/main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp
 CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = src/main.cpp src/Cat.cpp src/Dog.cpp src/Animal.cpp
-OBJECT_FILES = $(SRC:src/%cpp=$(OBJ)/%o)
-INCS = ./includes
+FLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
+OBJ = $(SRC:src/%.cpp=obj/%.o)
 
 all: $(NAME)
 
-$(OBJ)/%.o: src/%.cpp
-	$(CC) -c $< $(FLAGS) -I $(INCS) -o $@
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $@
 
-$(NAME): $(OBJ) $(OBJECT_FILES)
-	$(CC) $(OBJECT_FILES) -o $(NAME)
-
-$(OBJ):
-	mkdir -p $(OBJ)
+obj/%.o: src/%.cpp
+	@mkdir -p obj
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf obj
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

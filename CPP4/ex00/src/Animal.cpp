@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-#include "../includes/Colours.hpp"
 #include "../includes/Animal.hpp"
 
 Animal::Animal()
