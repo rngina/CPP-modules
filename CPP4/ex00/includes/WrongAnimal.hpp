@@ -1,21 +1,21 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <string>
 
-class Animal
+class WrongAnimal
 {
 protected:
 	std::string type;
 
 public:
-	Animal();
-	Animal(Animal &copy);
-	virtual ~Animal();
-	Animal &operator=(Animal &copy);
+	WrongAnimal();
+	WrongAnimal(WrongAnimal &copy);
+	~WrongAnimal();
+	WrongAnimal &operator=(WrongAnimal &copy);
 
 	std::string getType() const;
-	virtual void makeSound() const;
+	void makeSound() const;
 };
 
 #define RESET "\033[0m"

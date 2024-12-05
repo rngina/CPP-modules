@@ -1,5 +1,5 @@
 NAME = animal
-SRC = src/main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp
+SRC = src/main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
 OBJ = $(SRC:src/%.cpp=obj/%.o)
