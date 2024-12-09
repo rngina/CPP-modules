@@ -18,6 +18,9 @@ int	main()
 	}
 
 	for (int i = 0; i < num; i++)
+		animals[i]->makeSound();	
+
+	for (int i = 0; i < num; i++)
 		delete animals[i];
 
 
