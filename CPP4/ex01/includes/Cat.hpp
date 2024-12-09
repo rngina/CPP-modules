@@ -18,7 +18,8 @@ public:
 
 	void makeSound() const;
 	std::string getType() const;
-	void getIdea(int number) const;
+	std::string getIdea(int num);
+	void setIdea(int num, std::string idea);
 };
 
 #define RESET "\033[0m"

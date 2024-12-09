@@ -30,3 +30,19 @@ Brain &Brain::operator=(Brain &toCopy)
 	std::cout << "Brain Copy Assignment operator" << std::endl;
 	return (*this);
 }
+
+std::string Brain::getIdea(int num)
+{
+	if (num < 0 || num > 99)
+		return "Idea does not exist: Out of range";
+	else
+		return this->ideas[num];
+}
+
+void	Brain::setIdea(int num, std::string idea)
+{
+	if ((num < 0 || num > 99) || (idea.length() == 0))
+		return ;
+	else 
+		this->ideas[num] = idea;
+}

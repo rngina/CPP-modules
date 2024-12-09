@@ -25,11 +25,13 @@ int	main()
 	delete i;
 
 	Cat cat1;
-	cat1.getIdea(105);
-	cat1.getIdea(-5);
-	cat1.getIdea(3);
 	Cat cat2(cat1);
 
+	std::cout << "cat1 idea: " << cat1.getIdea(1) << std::endl;
+	std::cout << "cat2 idea: " << cat2.getIdea(1) << std::endl;
+	cat1.setIdea(1, "hello");
+	std::cout << "cat1 idea: " << cat1.getIdea(1) << std::endl;
+	std::cout << "cat2 idea: " << cat2.getIdea(1) << std::endl;
 
 	return 0;
 }
